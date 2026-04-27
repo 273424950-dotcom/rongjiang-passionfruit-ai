@@ -37,11 +37,17 @@ st.set_page_config(
 
 st.markdown("""
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap');
-    * { font-family: 'Noto Sans SC', 'Microsoft YaHei', sans-serif; }
-    .main { background: linear-gradient(180deg, #f8fdf5 0%, #fefdf0 50%, #fffcf5 100%); }
-    .stApp { background: transparent; }
-    .section-title {
+    html, body, div[data-testid="stAppViewContainer"], div[data-testid="stApp"] {
+        font-family: 'Noto Sans SC', 'Microsoft YaHei', sans-serif;
+    }
+    div[data-testid="stAppViewContainer"] {
+        background: linear-gradient(180deg, #f8fdf5 0%, #fefdf0 50%, #fffcf5 100%);
+    }
+    div[data-testid="stMetric"] {
+        background: white; border-radius: 10px; padding: 12px;
+        box-shadow: 0 1px 6px rgba(0,0,0,0.04);
+    }
+    div[class="stMarkdown"] p.section-title, .section-title {
         font-size: 1.25rem; font-weight: 700; color: #1a5c32;
         border-bottom: 3px solid #f5a623; padding-bottom: 6px; margin-bottom: 12px;
     }
@@ -51,15 +57,6 @@ st.markdown("""
     .strategy-box {
         background: #fffdf5; border: 1px solid rgba(245,166,35,0.2); border-radius: 10px;
         padding: 14px 18px; margin: 6px 0;
-    }
-    .insight-card {
-        background: white; border-radius: 10px; padding: 14px 18px;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.04); margin: 6px 0;
-        border-left: 4px solid #2d8c4a;
-    }
-    div[data-testid="stMetric"] {
-        background: white; border-radius: 10px; padding: 12px;
-        box-shadow: 0 1px 6px rgba(0,0,0,0.04);
     }
 </style>
 """, unsafe_allow_html=True)
